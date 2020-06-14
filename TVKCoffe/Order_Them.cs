@@ -23,15 +23,16 @@ namespace TVKCoffe
         private string GhiChu = "";
         int SoLuong = 1;
         int SoLuongPlus = 0;
+
        
 
-    public Order_Them(string maSP,string maOrder)
+    public Order_Them(string maSP,string maOrder,string maNV)
         {
             InitializeComponent();
             this.maSP = maSP;
             //this.od = OrderDAO.Instance.GetOrder(maOrder);
             LoadSanPham();
-            od = OrderDAO.Instance.GetOrderFromLocal(maOrder,"QL0003");
+            od = OrderDAO.Instance.GetOrderFromLocal(maOrder,maNV);
         }
         
 

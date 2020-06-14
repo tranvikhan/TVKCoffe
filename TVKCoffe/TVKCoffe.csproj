@@ -121,9 +121,11 @@
       <DependentUpon>DanhMuc_Sua.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\BanDAO.cs" />
+    <Compile Include="DAO\ChiTietHoaDonDAO.cs" />
     <Compile Include="DAO\ChiTietOrderDAO.cs" />
     <Compile Include="DAO\DanhMucDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\KhuVucDAO.cs" />
     <Compile Include="DAO\KhuyenMaiDAO.cs" />
@@ -134,9 +136,11 @@
     <Compile Include="DatabaseConnection\DBSQLServerUtils.cs" />
     <Compile Include="DatabaseConnection\DBUtils.cs" />
     <Compile Include="DTO\BanDTO.cs" />
+    <Compile Include="DTO\ChiTietHoaDonDTO.cs" />
     <Compile Include="DTO\ChiTietOrderDTO.cs" />
     <Compile Include="DTO\ConvertDTO.cs" />
     <Compile Include="DTO\DanhMucDTO.cs" />
+    <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="DTO\KhuVucDTO.cs" />
     <Compile Include="DTO\KhuyenMaiDTO.cs" />

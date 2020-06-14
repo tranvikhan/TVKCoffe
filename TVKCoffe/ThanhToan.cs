@@ -101,6 +101,7 @@ namespace TVKCoffe
             }
             else
             {
+                BanDAO.Instance.SetTrangThai(3, od.Ban.MaBan);
                 fmOrder.backToBanHang();
                 this.Close();
             }

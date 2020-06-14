@@ -39,6 +39,30 @@ namespace TVKCoffe
             tamtinh = 0;
             tongcong = 0;
             tongmon = 0;
+            if (od.Ban.TrangThai == 3)
+            {
+                this.BtnGiamGia.Enabled = false;
+                this.BtnPhuThu.Enabled = false;
+                this.btnThanhToan.Enabled = false;
+                this.BtnHuyBan.Enabled = true;
+                this.BtnHuyBan.Text = "Đóng bàn";
+                this.BtnTachBan.Enabled = false;
+                this.BtnKhachHang.Enabled = false;
+                this.BtnInTamTinh.Enabled = false;
+                this.BtnGopBan.Enabled = false;
+            }
+            else
+            {
+                this.BtnGiamGia.Enabled = true;
+                this.BtnPhuThu.Enabled = true;
+                this.btnThanhToan.Enabled = true;
+                this.BtnHuyBan.Enabled = true;
+                this.BtnTachBan.Enabled = true;
+                this.BtnKhachHang.Enabled = true;
+                this.BtnInTamTinh.Enabled = true;
+            }
+            
+
 
             this.GioVao.Text = "Mở bàn lúc: " + od.Thoigiantao.ToString("H:mm:ss")+" Ngày: " + od.Thoigiantao.ToString("dd/MM/yyyy");
             this.PhuThu.Text = "+";
@@ -209,20 +233,26 @@ namespace TVKCoffe
 
         private void Item_SoLuong_Click(object sender, EventArgs e)
         {
-            Control bt = sender as Control;
-            string maCT = bt.Name;
-            Order_Sua fm = new Order_Sua(maCT);
-            fm.formOrder = this;
-            fm.ShowDialog(this);
+            if (od.Ban.TrangThai != 3)
+            {
+                Control bt = sender as Control;
+                string maCT = bt.Name;
+                Order_Sua fm = new Order_Sua(maCT);
+                fm.formOrder = this;
+                fm.ShowDialog(this);
+            }
         }
 
         private void BtnXoaItem_Click(object sender, EventArgs e)
         {
-            Button bt = sender as Button;
-            string code = bt.Name;
-            Xoa fm = new Xoa("Xóa danh mục này khỏi Bàn?", "ITEMORDER", code);
-            fm.order = this;
-            fm.ShowDialog(this);
+            if (od.Ban.TrangThai != 3)
+            {
+                Button bt = sender as Button;
+                string code = bt.Name;
+                Xoa fm = new Xoa("Xóa danh mục này khỏi Bàn?", "ITEMORDER", code);
+                fm.order = this;
+                fm.ShowDialog(this);
+            }
 
         }
 
@@ -338,11 +368,15 @@ namespace TVKCoffe
 
         private void BtnSanPham_Click(object sender, EventArgs e)
         {
-            Control btn = sender as Control;
-            Order_Them fm = new Order_Them(btn.Name,od.getID());
-            
-            fm.formOrder = this;
-            fm.ShowDialog();
+
+            if (od.Ban.TrangThai != 3)
+            {
+                Control btn = sender as Control;
+                Order_Them fm = new Order_Them(btn.Name, od.getID(), maNV);
+
+                fm.formOrder = this;
+                fm.ShowDialog();
+            }
         }
 
 
@@ -410,9 +444,26 @@ namespace TVKCoffe
 
         private void BtnHuyBan_Click(object sender, EventArgs e)
         {
-            Order_Huy fm = new Order_Huy(od.getID());
-            fm.order = this;
-            fm.ShowDialog(this);
+            if (od.Ban.TrangThai != 3)
+            {
+                Order_Huy fm = new Order_Huy(od.getID());
+                fm.order = this;
+                fm.ShowDialog(this);
+            }
+            else
+            {
+                try
+                {
+                    BanDAO.Instance.SetTrangThai(0, od.getID());
+                    OrderDAO.Instance.Delete(od.getID());
+                }
+                catch
+                {
+                    MessageBox.Show("Đã xảy ra lỗi với bàn này!");
+                }
+                backToBanHang();
+            }
+            
         }
 
         private void BtnTachBan_Click(object sender, EventArgs e)
@@ -423,6 +474,7 @@ namespace TVKCoffe
 
         private void BtnGopBan_Click(object sender, EventArgs e)
         {
+            
             GopBan fm = new GopBan();
             fm.ShowDialog(this);
         }
@@ -435,19 +487,32 @@ namespace TVKCoffe
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            ThanhToan fm = new ThanhToan(od.getID(),this.tongcong);
-            fm.fmOrder = this;
-            fm.ShowDialog(this);
+            if (od.Ban.TrangThai ==2)
+            {
+                ThanhToan fm = new ThanhToan(od.getID(), this.tongcong);
+                fm.fmOrder = this;
+                fm.ShowDialog(this);
+            }
+            else
+            {
+                PhieuTamTinh fm = new PhieuTamTinh(this.od.getID());
+                fm.ShowDialog(this);
+                BanDAO.Instance.SetTrangThai(2, this.od.Ban.MaBan);
+                od = OrderDAO.Instance.GetOrderFromLocal(this.od.Ban.MaBan, this.maNV);
+            }
+            
         }
 
         private void BtnPhuThu_Click(object sender, EventArgs e)
         {
-
+            PhuThu fm = new PhuThu();
+            fm.ShowDialog(this);
         }
 
         private void BtnGiamGia_Click(object sender, EventArgs e)
         {
-
+            GiamGia fm = new GiamGia();
+            fm.ShowDialog(this);
         }
 
         private void BtnInTamTinh_Click(object sender, EventArgs e)
@@ -470,17 +535,12 @@ namespace TVKCoffe
             od = OrderDAO.Instance.GetOrderFromLocal(this.od.Ban.MaBan, this.maNV);
             this.tenBan.Text = od.Ban.TenBan;
             this.tenKhuVuc.Text = od.Ban.KhuVuc.TenKV;
-            if (od.Ban.TrangThai != 0)
+            if (od.Ban.TrangThai != 0 )
             {
+                
                 od = OrderDAO.Instance.GetOrderFromDB(od.getID());
                 FillOrder();
-                this.BtnGiamGia.Enabled = true;
-                this.BtnPhuThu.Enabled = true;
-                this.btnThanhToan.Enabled = true;
-                this.BtnHuyBan.Enabled = true;
-                this.BtnTachBan.Enabled = true;
-                this.BtnKhachHang.Enabled = true;
-                this.BtnInTamTinh.Enabled = true;
+                
             }
             else
             {

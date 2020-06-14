@@ -21,5 +21,11 @@ namespace TVKCoffe
         {
 
         }
+
+        private void BtnAddBan_Click(object sender, EventArgs e)
+        {
+            ChonBan fm = new ChonBan();
+            fm.ShowDialog(this);
+        }
     }
 }

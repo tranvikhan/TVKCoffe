@@ -55,6 +55,7 @@
             this.BtnAddBan.Text = "Thêm bàn";
             this.BtnAddBan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnAddBan.UseVisualStyleBackColor = false;
+            this.BtnAddBan.Click += new System.EventHandler(this.BtnAddBan_Click);
             // 
             // BtnLamLai
             // 
