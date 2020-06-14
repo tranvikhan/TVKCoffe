@@ -50,6 +50,7 @@
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.panelContencedor = new System.Windows.Forms.Panel();
+            this.MenuItem = new System.Windows.Forms.FlowLayoutPanel();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoImage)).BeginInit();
             this.DockTile.SuspendLayout();
@@ -59,21 +60,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            this.MenuItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.PanelMenu.Controls.Add(this.BtnKhuyenMai);
-            this.PanelMenu.Controls.Add(this.BtnDangXuat);
-            this.PanelMenu.Controls.Add(this.BtnCaiDat);
-            this.PanelMenu.Controls.Add(this.BtnNhanVien);
-            this.PanelMenu.Controls.Add(this.BtnKhachHang);
-            this.PanelMenu.Controls.Add(this.BtnSoDo);
-            this.PanelMenu.Controls.Add(this.BtnThucDon);
-            this.PanelMenu.Controls.Add(this.BtnDoanhThu);
-            this.PanelMenu.Controls.Add(this.BtnHoaDon);
-            this.PanelMenu.Controls.Add(this.BtnBanHang);
+            this.PanelMenu.Controls.Add(this.MenuItem);
             this.PanelMenu.Controls.Add(this.logoImage);
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
@@ -92,7 +85,8 @@
             this.BtnKhuyenMai.ForeColor = System.Drawing.Color.White;
             this.BtnKhuyenMai.Image = ((System.Drawing.Image)(resources.GetObject("BtnKhuyenMai.Image")));
             this.BtnKhuyenMai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnKhuyenMai.Location = new System.Drawing.Point(0, 450);
+            this.BtnKhuyenMai.Location = new System.Drawing.Point(0, 346);
+            this.BtnKhuyenMai.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnKhuyenMai.Name = "BtnKhuyenMai";
             this.BtnKhuyenMai.Size = new System.Drawing.Size(160, 43);
             this.BtnKhuyenMai.TabIndex = 8;
@@ -111,7 +105,8 @@
             this.BtnDangXuat.ForeColor = System.Drawing.Color.White;
             this.BtnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("BtnDangXuat.Image")));
             this.BtnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDangXuat.Location = new System.Drawing.Point(3, 548);
+            this.BtnDangXuat.Location = new System.Drawing.Point(0, 444);
+            this.BtnDangXuat.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnDangXuat.Name = "BtnDangXuat";
             this.BtnDangXuat.Size = new System.Drawing.Size(160, 43);
             this.BtnDangXuat.TabIndex = 10;
@@ -130,7 +125,8 @@
             this.BtnCaiDat.ForeColor = System.Drawing.Color.White;
             this.BtnCaiDat.Image = ((System.Drawing.Image)(resources.GetObject("BtnCaiDat.Image")));
             this.BtnCaiDat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCaiDat.Location = new System.Drawing.Point(3, 499);
+            this.BtnCaiDat.Location = new System.Drawing.Point(0, 395);
+            this.BtnCaiDat.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnCaiDat.Name = "BtnCaiDat";
             this.BtnCaiDat.Size = new System.Drawing.Size(160, 43);
             this.BtnCaiDat.TabIndex = 9;
@@ -149,7 +145,8 @@
             this.BtnNhanVien.ForeColor = System.Drawing.Color.White;
             this.BtnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("BtnNhanVien.Image")));
             this.BtnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNhanVien.Location = new System.Drawing.Point(0, 401);
+            this.BtnNhanVien.Location = new System.Drawing.Point(0, 297);
+            this.BtnNhanVien.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnNhanVien.Name = "BtnNhanVien";
             this.BtnNhanVien.Size = new System.Drawing.Size(160, 43);
             this.BtnNhanVien.TabIndex = 7;
@@ -168,7 +165,8 @@
             this.BtnKhachHang.ForeColor = System.Drawing.Color.White;
             this.BtnKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("BtnKhachHang.Image")));
             this.BtnKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnKhachHang.Location = new System.Drawing.Point(0, 352);
+            this.BtnKhachHang.Location = new System.Drawing.Point(0, 248);
+            this.BtnKhachHang.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnKhachHang.Name = "BtnKhachHang";
             this.BtnKhachHang.Size = new System.Drawing.Size(160, 43);
             this.BtnKhachHang.TabIndex = 6;
@@ -187,7 +185,8 @@
             this.BtnSoDo.ForeColor = System.Drawing.Color.White;
             this.BtnSoDo.Image = ((System.Drawing.Image)(resources.GetObject("BtnSoDo.Image")));
             this.BtnSoDo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSoDo.Location = new System.Drawing.Point(0, 305);
+            this.BtnSoDo.Location = new System.Drawing.Point(0, 199);
+            this.BtnSoDo.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnSoDo.Name = "BtnSoDo";
             this.BtnSoDo.Size = new System.Drawing.Size(160, 43);
             this.BtnSoDo.TabIndex = 5;
@@ -206,7 +205,8 @@
             this.BtnThucDon.ForeColor = System.Drawing.Color.White;
             this.BtnThucDon.Image = ((System.Drawing.Image)(resources.GetObject("BtnThucDon.Image")));
             this.BtnThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnThucDon.Location = new System.Drawing.Point(0, 256);
+            this.BtnThucDon.Location = new System.Drawing.Point(0, 150);
+            this.BtnThucDon.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnThucDon.Name = "BtnThucDon";
             this.BtnThucDon.Size = new System.Drawing.Size(160, 43);
             this.BtnThucDon.TabIndex = 4;
@@ -225,7 +225,8 @@
             this.BtnDoanhThu.ForeColor = System.Drawing.Color.White;
             this.BtnDoanhThu.Image = ((System.Drawing.Image)(resources.GetObject("BtnDoanhThu.Image")));
             this.BtnDoanhThu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDoanhThu.Location = new System.Drawing.Point(0, 207);
+            this.BtnDoanhThu.Location = new System.Drawing.Point(0, 101);
+            this.BtnDoanhThu.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnDoanhThu.Name = "BtnDoanhThu";
             this.BtnDoanhThu.Size = new System.Drawing.Size(160, 43);
             this.BtnDoanhThu.TabIndex = 3;
@@ -244,7 +245,8 @@
             this.BtnHoaDon.ForeColor = System.Drawing.Color.White;
             this.BtnHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("BtnHoaDon.Image")));
             this.BtnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnHoaDon.Location = new System.Drawing.Point(0, 158);
+            this.BtnHoaDon.Location = new System.Drawing.Point(0, 52);
+            this.BtnHoaDon.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnHoaDon.Name = "BtnHoaDon";
             this.BtnHoaDon.Size = new System.Drawing.Size(160, 43);
             this.BtnHoaDon.TabIndex = 2;
@@ -263,7 +265,8 @@
             this.BtnBanHang.ForeColor = System.Drawing.Color.White;
             this.BtnBanHang.Image = ((System.Drawing.Image)(resources.GetObject("BtnBanHang.Image")));
             this.BtnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBanHang.Location = new System.Drawing.Point(0, 109);
+            this.BtnBanHang.Location = new System.Drawing.Point(0, 3);
+            this.BtnBanHang.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.BtnBanHang.Name = "BtnBanHang";
             this.BtnBanHang.Size = new System.Drawing.Size(160, 43);
             this.BtnBanHang.TabIndex = 1;
@@ -394,6 +397,24 @@
             this.panelContencedor.Size = new System.Drawing.Size(1140, 614);
             this.panelContencedor.TabIndex = 2;
             // 
+            // MenuItem
+            // 
+            this.MenuItem.Controls.Add(this.BtnBanHang);
+            this.MenuItem.Controls.Add(this.BtnHoaDon);
+            this.MenuItem.Controls.Add(this.BtnDoanhThu);
+            this.MenuItem.Controls.Add(this.BtnThucDon);
+            this.MenuItem.Controls.Add(this.BtnSoDo);
+            this.MenuItem.Controls.Add(this.BtnKhachHang);
+            this.MenuItem.Controls.Add(this.BtnNhanVien);
+            this.MenuItem.Controls.Add(this.BtnKhuyenMai);
+            this.MenuItem.Controls.Add(this.BtnCaiDat);
+            this.MenuItem.Controls.Add(this.BtnDangXuat);
+            this.MenuItem.Location = new System.Drawing.Point(0, 97);
+            this.MenuItem.Margin = new System.Windows.Forms.Padding(0);
+            this.MenuItem.Name = "MenuItem";
+            this.MenuItem.Size = new System.Drawing.Size(160, 540);
+            this.MenuItem.TabIndex = 11;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            this.MenuItem.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -443,5 +465,6 @@
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Button BtnKhachHang;
         private System.Windows.Forms.Button BtnKhuyenMai;
+        private System.Windows.Forms.FlowLayoutPanel MenuItem;
     }
 }

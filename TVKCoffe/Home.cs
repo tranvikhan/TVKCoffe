@@ -99,7 +99,7 @@ namespace TVKCoffe
         }
         private void active(Object obj)
         {
-            foreach(Control control in this.PanelMenu.Controls)
+            foreach(Control control in this.MenuItem.Controls)
             {
                 
                 control.BackColor = Color.FromArgb(52, 152, 219);
@@ -185,6 +185,22 @@ namespace TVKCoffe
                 addFormtoPanel(fm);
                 active(this.BtnBanHang);
             }
+            if(nv.ChucVu.Equals("Thu Ngân"))
+            {
+                MenuItem.Controls.Remove(BtnKhuyenMai);
+                MenuItem.Controls.Remove(BtnNhanVien);
+                MenuItem.Controls.Remove(BtnThucDon);
+                MenuItem.Controls.Remove(BtnSoDo);
+                MenuItem.Controls.Remove(BtnDoanhThu);
+                MenuItem.Controls.Remove(BtnCaiDat);
+               
+            }
+            if (nv.ChucVu.Equals("Quản Lý"))
+            {
+                MenuItem.Controls.Remove(BtnNhanVien);
+                MenuItem.Controls.Remove(BtnCaiDat);
+            }
+
         }
 
 

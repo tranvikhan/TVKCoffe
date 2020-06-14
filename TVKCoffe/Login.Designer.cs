@@ -148,7 +148,7 @@
             this.Password.Location = new System.Drawing.Point(22, 135);
             this.Password.Margin = new System.Windows.Forms.Padding(4);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(195, 32);
+            this.Password.Size = new System.Drawing.Size(195, 35);
             this.Password.TabIndex = 2;
             this.Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Password.Click += new System.EventHandler(this.Password_Click);
@@ -167,7 +167,7 @@
             this.Username.Location = new System.Drawing.Point(21, 67);
             this.Username.Margin = new System.Windows.Forms.Padding(4);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(195, 32);
+            this.Username.Size = new System.Drawing.Size(195, 35);
             this.Username.TabIndex = 1;
             this.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.Username.Click += new System.EventHandler(this.Username_Click);
