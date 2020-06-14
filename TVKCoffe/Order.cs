@@ -520,6 +520,7 @@ namespace TVKCoffe
             PhieuTamTinh fm = new PhieuTamTinh(this.od.getID());
             fm.ShowDialog(this);
             BanDAO.Instance.SetTrangThai(2, this.od.Ban.MaBan);
+            od = OrderDAO.Instance.GetOrderFromLocal(this.od.Ban.MaBan, this.maNV);
         }
 
         private void BtnTimKiem_OnTextChange(object sender, EventArgs e)

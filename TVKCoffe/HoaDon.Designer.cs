@@ -46,7 +46,6 @@
             this.ColMaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BangHoaDon)).BeginInit();
@@ -132,6 +131,7 @@
             this.BtnTimKiem.Size = new System.Drawing.Size(231, 31);
             this.BtnTimKiem.TabIndex = 12;
             this.BtnTimKiem.text = "";
+            this.BtnTimKiem.OnTextChange += new System.EventHandler(this.BtnTimKiem_OnTextChange);
             // 
             // TimeDenNgay
             // 
@@ -145,6 +145,7 @@
             this.TimeDenNgay.Size = new System.Drawing.Size(192, 32);
             this.TimeDenNgay.TabIndex = 11;
             this.TimeDenNgay.Value = new System.DateTime(2020, 4, 23, 18, 1, 37, 521);
+            this.TimeDenNgay.onValueChanged += new System.EventHandler(this.TimeDenNgay_onValueChanged);
             // 
             // TimeTuNgay
             // 
@@ -158,6 +159,7 @@
             this.TimeTuNgay.Size = new System.Drawing.Size(189, 31);
             this.TimeTuNgay.TabIndex = 11;
             this.TimeTuNgay.Value = new System.DateTime(2020, 4, 23, 18, 1, 37, 521);
+            this.TimeTuNgay.onValueChanged += new System.EventHandler(this.TimeTuNgay_onValueChanged);
             // 
             // BangHoaDon
             // 
@@ -183,7 +185,6 @@
             this.ColMaHoaDon,
             this.ColSanPham,
             this.ColTongTien,
-            this.ColBan,
             this.ColKhachHang});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -209,6 +210,7 @@
             // 
             // ColStt
             // 
+            this.ColStt.DataPropertyName = "stt";
             this.ColStt.HeaderText = "STT";
             this.ColStt.Name = "ColStt";
             this.ColStt.ReadOnly = true;
@@ -216,39 +218,37 @@
             // 
             // ColNgayTao
             // 
+            this.ColNgayTao.DataPropertyName = "ngaytao";
             this.ColNgayTao.HeaderText = "NGÀY TẠO";
             this.ColNgayTao.Name = "ColNgayTao";
             this.ColNgayTao.ReadOnly = true;
-            this.ColNgayTao.Width = 150;
             // 
             // ColMaHoaDon
             // 
+            this.ColMaHoaDon.DataPropertyName = "mahoadon";
             this.ColMaHoaDon.HeaderText = "MÃ HÓA ĐƠN";
             this.ColMaHoaDon.Name = "ColMaHoaDon";
             this.ColMaHoaDon.ReadOnly = true;
-            this.ColMaHoaDon.Width = 120;
+            this.ColMaHoaDon.Width = 155;
             // 
             // ColSanPham
             // 
             this.ColSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColSanPham.DataPropertyName = "sanpham";
             this.ColSanPham.HeaderText = "SẢN PHẨM";
             this.ColSanPham.Name = "ColSanPham";
             this.ColSanPham.ReadOnly = true;
             // 
             // ColTongTien
             // 
+            this.ColTongTien.DataPropertyName = "tongtien";
             this.ColTongTien.HeaderText = "TỔNG TIỀN";
             this.ColTongTien.Name = "ColTongTien";
             this.ColTongTien.ReadOnly = true;
             // 
-            // ColBan
-            // 
-            this.ColBan.HeaderText = "BÀN";
-            this.ColBan.Name = "ColBan";
-            this.ColBan.ReadOnly = true;
-            // 
             // ColKhachHang
             // 
+            this.ColKhachHang.DataPropertyName = "khachhang";
             this.ColKhachHang.HeaderText = "KHÁCH HÀNG";
             this.ColKhachHang.Name = "ColKhachHang";
             this.ColKhachHang.ReadOnly = true;
@@ -288,7 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColKhachHang;
     }
 }
